@@ -20,7 +20,12 @@
 
 ;; Local sources
 (setq el-get-sources
-      '((:name bbdb
+      '((:name initsplit
+	       :description "Code to split customizations into different files"
+	       :type git
+	       :url "git://github.com/dabrahams/initsplit.git"
+	       :features initsplit)
+	(:name bbdb
 	       :type git
 	       :url "git://git.savannah.nongnu.org/bbdb.git"
 	       :checkout "v2.x"
