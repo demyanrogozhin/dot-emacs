@@ -18,6 +18,7 @@
  '(company-idle-delay 0.2)
  '(company-minimum-prefix-length 2)
  '(company-tooltip-minimum 3)
+ '(el-get-github-default-url-type (quote https))
  '(el-get-recipe-path (quote ("~/.emacs.d/el-get/el-get/recipes" "~/.emacs.d/el-get/el-get/recipes/emacswiki/" "~/.emacs.d/site-lisp/recipes/")))
  '(highlight-symbol-idle-delay 0.5)
  '(hl-sexp-background-color "#ffffff")
