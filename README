@@ -1,0 +1,10 @@
+New self-installable emacs-config
+
+SETUP
+
+Clone to ~/.emacs.d/.
+
+First run after on fresh install finished with error - el-get will
+installed from git.
+
+Exit emacs than run again - it will install and init all packages.
