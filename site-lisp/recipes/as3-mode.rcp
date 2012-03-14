@@ -1,0 +1,8 @@
+(:name as3-mode
+       :website "https://github.com/aemoncannon/as3-mode"
+       :description "A simple mode for editing Actionscript 3 files"
+       :type git
+       :url "git://github.com/aemoncannon/as3-mode.git"
+       :depends (yasnippet flyparse-mode)
+       :features as3-mode
+       :compile nil)

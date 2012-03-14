@@ -1,0 +1,1 @@
+(setq eval-sexp-fu-flash-duration 0.5)

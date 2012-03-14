@@ -1,0 +1,4 @@
+(:name flashdev
+       :description "flashdev"
+       :type git
+       :url "https://github.com/demyanrogozhin/flashdev.el.git")

@@ -1,0 +1,8 @@
+(:name flyparse-mode
+       :website "https://github.com/aemoncannon/flyparse-mode"
+       :description "Flyparse-mode is an emacs minor-mode designed to support the creation of programming-language major-modes"
+       :type git
+       :url "git://github.com/aemoncannon/flyparse-mode.git"
+       :depends nil
+       :features flyparse-mode
+       :compile nil)
