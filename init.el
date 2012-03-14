@@ -130,6 +130,9 @@
                 eval-sexp-fu rainbow-delimiters paredit paredit-extension parenthesis parenface
                 highlight highlight-parentheses highlight-sexp highlight-symbol smex)
        (mapcar 'el-get-source-name el-get-sources)))
+
+(add-hook 'el-get-post-install-hooks 'el-get-init)
+
 (el-get 'sync my-packages)
 (require 'elhome)
 (elhome-init)
