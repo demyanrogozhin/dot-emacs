@@ -120,6 +120,12 @@
 	 :options ("jxf")
          :url "http://nschum.de/src/emacs/company-mode/company-0.5.tar.bz2"
          :features company)
+        (:name slime-js
+         :website "http://marmalade-repo.org/packages/slime-js/"
+         :description "Slime extension for swank-js"
+         :type git
+         :url "git://github.com/swank-js/slime-js.git"
+         :features slime-js)
         (:name ac-company
          :type http
          :url "https://raw.github.com/buzztaiki/auto-complete/master/ac-company.el")
@@ -128,11 +134,13 @@
 (setq my-packages
       (append '(el-get elhome emacs-jabber igrep vkill speck ac-slime ac-dabbrev csv-mode slime-company
                 eval-sexp-fu rainbow-delimiters paredit paredit-extension parenthesis parenface
-                highlight highlight-parentheses highlight-sexp highlight-symbol smex)
+                highlight highlight-parentheses highlight-sexp highlight-symbol smex
+                skype js2-mode)
        (mapcar 'el-get-source-name el-get-sources)))
 
 (add-hook 'el-get-post-install-hooks 'el-get-init)
 
 (el-get 'sync my-packages)
+ 
 (require 'elhome)
 (elhome-init)
