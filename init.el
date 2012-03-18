@@ -128,7 +128,7 @@
 	(:name ac-company
          :type http
          :url "https://raw.github.com/buzztaiki/auto-complete/master/ac-company.el")
-        (:name ergoemacs-keybindings :after ergoemacs-mode)
+        (:name ergoemacs-keybindings)
         (:name magit :after (progn (global-set-key (kbd "C-x C-m") 'magit-status)))))
 
 (setq my-packages
