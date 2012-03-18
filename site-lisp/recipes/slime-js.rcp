@@ -1,0 +1,5 @@
+(:name slime-js
+       :website "http://marmalade-repo.org/packages/slime-js/"
+       :description "Slime extension for swank-js"
+       :type git
+       :url "git://github.com/swank-js/slime-js.git")
