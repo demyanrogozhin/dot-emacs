@@ -81,7 +81,11 @@
 (define-key me-minor-mode-map (kbd "C-z -") 'my-decrement-number)
 ;;global for SLIME
 (define-key me-minor-mode-map (kbd "C-c s") 'slime-selector)
-;(define-key slime-repl-mode-map (kbd "C-;") 'slime-insert-balance-comments) ;where is that func?
+(define-key me-minor-mode-map (kbd "C-z s") 'slime-selector)
+;;; override paredit 
+(define-key me-minor-mode-map ergoemacs-isearch-forward-key 'isearch-forward)
+
+;; (define-key slime-repl-mode-map (kbd "C-;") 'slime-insert-balance-comments) ;where is that func?
 (define-key global-map [f5] '(lambda () (interactive) (activate-input-method ())))
 (define-key global-map [f7] '(lambda () (interactive) (activate-input-method "russian-computer")))
 ;(define-key me-minor-mode-map [menu] 'toggle-input-method)

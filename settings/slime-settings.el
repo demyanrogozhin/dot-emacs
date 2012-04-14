@@ -1,9 +1,13 @@
-;(add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-mode-hook
-          '(lambda ()
-            (company-mode 1)
-            (set (make-local-variable 'company-backends)
-                 '(slime-company-backend))))
+(add-hook 'slime-mode-hook 'set-up-slime-ac)
+(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'slime-repl-mode))
+
+;; (add-hook 'slime-mode-hook
+;;           '(lambda ()
+;;             (company-mode 1)
+;;             (set (make-local-variable 'company-backends)
+;;                  '(slime-company-backend))))
 
 ;; Настроим хоткеи для автодополнения и выравнивания отступов
 (define-key slime-mode-map (kbd "TAB")

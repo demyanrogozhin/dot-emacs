@@ -18,6 +18,8 @@
   (unless (file-exists-p emacswiki-recipes)
     (el-get-emacswiki-refresh emacswiki-recipes t)))
 
+(push (concat el-get-dir "site-lisp/recipes/") el-get-recipe-path)
+
 ;; Local sources
 (setq el-get-sources
       '((:name initsplit
@@ -101,42 +103,25 @@
                    ("compile-wl-package"  "site-lisp" "icons")
                    ("install-wl-package" "site-lisp" "icons")))
          :info "doc/wl.info"
-         :load-path ("site-lisp/wl" "utils")
-         (:name ergoemacs-keybindings :after 'ergoemacs-mode)
-         (:name auto-complete
-          :website "http://cx4a.org/software/auto-complete/"
-          :description "The most intelligent auto-completion extension."
-          :type git
-          :url "git://github.com/m2ym/auto-complete.git"
-          :load-path "."
-          :post-init nil))
+         :load-path ("site-lisp/wl" "utils"))
         (:name ps-ccrypt
          :type http
          :url "http://ccrypt.sourceforge.net/ps-ccrypt.el"
          :post-init (require 'ps-ccrypt)
          :features ps-ccrypt)
-        (:name company
-         :type http-tar
-         :options ("jxf")
-         :url "http://nschum.de/src/emacs/company-mode/company-0.5.tar.bz2"
-         :before
-         (defvar company-backends
-           '(company-elisp company-nxml company-css company-eclim company-semantic company-clang company-gtags company-etags company-dabbrev-code company-keywords company-files company-dabbrev))
-         :features company)
 	(:name igrep
          :type emacsmirror)
-	(:name ac-company
-         :type http
-         :url "https://raw.github.com/buzztaiki/auto-complete/master/ac-company.el")
-        (:name ergoemacs-keybindings)
+        (:name color-theme-less :type http :url "http://jblevins.org/git/misc.git/plain/color-theme-less.el")
         (:name magit :after (progn (global-set-key (kbd "C-x C-m") 'magit-status)))))
 
 (setq my-packages
       (append
-       '(el-get elhome emacs-jabber vkill speck ac-slime ac-dabbrev csv-mode slime-company
+       '(el-get elhome ergoemacs-keybindings emacs-jabber vkill speck csv-mode
          eval-sexp-fu rainbow-delimiters paredit paredit-extension parenthesis parenface
          highlight highlight-parentheses highlight-sexp highlight-symbol smex
-         skype js2-mode)
+         skype js2-mode color-theme
+	 auto-complete ac-slime ac-dabbrev
+)
        (mapcar 'el-get-source-name el-get-sources)))
 (add-hook 'el-get-post-install-hooks 'el-get-init)
 
