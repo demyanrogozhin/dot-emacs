@@ -119,7 +119,7 @@
        '(el-get elhome ergoemacs-keybindings emacs-jabber vkill speck csv-mode
          eval-sexp-fu rainbow-delimiters paredit paredit-extension parenthesis parenface
          highlight highlight-parentheses highlight-sexp highlight-symbol smex
-         skype js2-mode color-theme
+         skype js2-mode color-theme rainbow-mode
 	 auto-complete ac-slime ac-dabbrev
 )
        (mapcar 'el-get-source-name el-get-sources)))

@@ -3,6 +3,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(Info-additional-directory-list (quote ("~/doc/info")))
  '(bbdb-always-add-addresses (quote bbdb-ignore-some-messages-hook))
  '(bbdb-auto-notes-ignore (quote (("From" . "noreply") ("From" . "no-reply"))))
  '(bbdb-auto-notes-ignore-all (quote (("From" . "portal-noreply") ("From" . "facebook"))))
@@ -38,7 +39,8 @@
  '(mmm-submode-decoration-level 0)
  '(safe-local-variable-values (quote ((js-run . "swank-handler-tests.js") (lexical-binding . t) (js-run . "lisp-tests.js") (eval whitespace-mode) (eval set-face-attribute (quote whitespace-line) nil :background "red1" :foreground "yellow" :weight (quote bold)) (eval set-face-attribute (quote whitespace-tab) nil :background "red1" :foreground "yellow" :weight (quote bold)) (eval require (quote whitespace)) (eval ignore-errors "Write-contents-functions is a buffer-local alternative to before-save-hook" (add-hook (quote write-contents-functions) (lambda nil (delete-trailing-whitespace (point-min) (point-max)) nil)) (require (quote whitespace)) "Sometimes the mode needs to be toggled off and on." (whitespace-mode 0) (whitespace-mode 1)) (whitespace-line-column . 80) (whitespace-style face trailing lines-tail) (require-final-newline . t) (eval add-hook (quote write-file-hooks) (quote time-stamp)))))
  '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(vc-handled-backends nil))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
