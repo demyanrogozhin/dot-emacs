@@ -36,6 +36,7 @@
  '(js2-enter-indents-newline t)
  '(js2-indent-on-enter-key t)
  '(make-backup-files nil)
+ '(menu-bar-mode nil)
  '(mmm-submode-decoration-level 0)
  '(safe-local-variable-values (quote ((js-run . "swank-handler-tests.js") (lexical-binding . t) (js-run . "lisp-tests.js") (eval whitespace-mode) (eval set-face-attribute (quote whitespace-line) nil :background "red1" :foreground "yellow" :weight (quote bold)) (eval set-face-attribute (quote whitespace-tab) nil :background "red1" :foreground "yellow" :weight (quote bold)) (eval require (quote whitespace)) (eval ignore-errors "Write-contents-functions is a buffer-local alternative to before-save-hook" (add-hook (quote write-contents-functions) (lambda nil (delete-trailing-whitespace (point-min) (point-max)) nil)) (require (quote whitespace)) "Sometimes the mode needs to be toggled off and on." (whitespace-mode 0) (whitespace-mode 1)) (whitespace-line-column . 80) (whitespace-style face trailing lines-tail) (require-final-newline . t) (eval add-hook (quote write-file-hooks) (quote time-stamp)))))
  '(scroll-bar-mode nil)

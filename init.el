@@ -111,7 +111,9 @@
          :features ps-ccrypt)
 	(:name igrep
          :type emacsmirror)
-        (:name color-theme-less :type http :url "http://jblevins.org/git/misc.git/plain/color-theme-less.el")
+        (:name color-theme-less :type http :url "http://jblevins.org/git/misc.git/plain/color-theme-less.el"
+               :depends color-theme
+               :after (progn (require 'color-theme-less) (color-theme-less)))
         (:name magit :after (progn (global-set-key (kbd "C-x C-m") 'magit-status)))))
 
 (setq my-packages
