@@ -111,9 +111,17 @@
          :features ps-ccrypt)
 	(:name igrep
          :type emacsmirror)
+	(:name kill-ring-search
+	       :website "http://nschum.de/src/emacs/kill-ring-search/"
+	       :description "Search the kill ring incrementally and yank the result"
+	       :type elpa
+	       :url "kill-ring-search")
         (:name color-theme-less :type http :url "http://jblevins.org/git/misc.git/plain/color-theme-less.el"
                :depends color-theme
                :after (progn (require 'color-theme-less) (color-theme-less)))
+        (:name typing
+               :features typing
+               :after (progn (require 'typing)))
         (:name magit :after (progn (global-set-key (kbd "C-x C-m") 'magit-status)))))
 
 (setq my-packages
@@ -121,12 +129,12 @@
        '(el-get elhome ergoemacs-keybindings emacs-jabber vkill speck csv-mode
          eval-sexp-fu rainbow-delimiters paredit paredit-extension parenthesis parenface
          highlight highlight-parentheses highlight-sexp highlight-symbol smex
-         skype js2-mode color-theme rainbow-mode
-	 auto-complete ac-slime ac-dabbrev
-)
+         skype js2-mode color-theme rainbow-mode mark-multiple kill-ring-search smart-tab
+	 auto-complete ac-slime ac-dabbrev volatile-highlights 
+         )
        (mapcar 'el-get-source-name el-get-sources)))
 (add-hook 'el-get-post-install-hooks 'el-get-init)
-
+;; you should be connected to Net at this point
 (el-get 'sync my-packages)
 
 (require 'elhome)

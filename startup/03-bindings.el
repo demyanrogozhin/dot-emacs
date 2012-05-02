@@ -84,6 +84,8 @@
 (define-key me-minor-mode-map (kbd "C-z s") 'slime-selector)
 ;;; override paredit 
 (define-key me-minor-mode-map ergoemacs-isearch-forward-key 'isearch-forward)
+;;
+(define-key me-minor-mode-map (kbd "C-z t o e") 'typing-of-emacs)
 
 ;; (define-key slime-repl-mode-map (kbd "C-;") 'slime-insert-balance-comments) ;where is that func?
 (define-key global-map [f5] '(lambda () (interactive) (activate-input-method ())))

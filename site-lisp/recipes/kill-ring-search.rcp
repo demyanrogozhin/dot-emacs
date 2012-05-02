@@ -1,0 +1,5 @@
+(:name kill-ring-search
+       :website "http://nschum.de/src/emacs/kill-ring-search/"
+       :description "Search the kill ring incrementally and yank the result"
+       :type elpa
+       :url "kill-ring-search")

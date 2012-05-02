@@ -1,0 +1,7 @@
+(:name js2-refactor
+ :website "https://github.com/magnars/js2-refactor.el"
+ :description "Collection of small refactoring functions to further the idea of a JavaScript IDE in Emacs that started with js2-mode."
+ :type github
+ :pkgname "magnars/js2-refactor.el"
+ :depends (js2-mode mark-multiple)
+ :features js2-refactor)
