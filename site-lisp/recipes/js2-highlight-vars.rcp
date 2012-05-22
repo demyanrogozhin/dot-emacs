@@ -1,5 +1,5 @@
-(:name 
+(:name js2-highlight-vars
        :website "http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode/js2-highlight-vars-mode"
        :description "highlight occurrences of the variable under cursor"
-       :type 
+       :type http
        :url "http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode/js2-highlight-vars-mode/js2-highlight-vars.el")
