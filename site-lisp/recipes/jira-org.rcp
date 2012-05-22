@@ -1,0 +1,5 @@
+(:name jira-org
+       :type github
+       :description "jira mode for org"
+       :pkgname "baohaojun/org-jira"
+       :features org-jira)
