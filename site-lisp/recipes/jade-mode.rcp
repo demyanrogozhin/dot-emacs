@@ -1,0 +1,4 @@
+(:name jade-mode
+       :description "Major mode for editing Jade files"
+       :type github
+       :pkgname "brianc/jade-mode")

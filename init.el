@@ -43,17 +43,17 @@
                :type git
                :url "git://github.com/dabrahams/initsplit.git"
                :features initsplit)
-        (:name dash
-               :type elpa
-               :description "Dash"
-               :features dash)
+        ;; (:name dash
+        ;;        :type elpa
+        ;;        :description "Dash"
+        ;;        :features dash)
         (:name ps-ccrypt
                :type http
                :url "http://ccrypt.sourceforge.net/ps-ccrypt.el"
                :post-init (require 'ps-ccrypt)
                :features ps-ccrypt)
-        (:name igrep
-               :type emacsmirror)
+        ;; (:name igrep
+        ;;        :type emacsmirror)
         (:name kill-ring-search
                :website "http://nschum.de/src/emacs/kill-ring-search/"
                :description "Search the kill ring incrementally and yank the result"
@@ -71,8 +71,9 @@
       (append my-mach-packages
               '(elhome
                 ergoemacs-keybindings
-                geiser
-                ;; speck csv-mode eval-sexp-fu
+                ;; geiser
+                slime
+                ;; speck csv-mode eval-sexp-fu 
                 rainbow-delimiters
                 paredit
                 ;; paredit-extension parenthesis
@@ -81,13 +82,18 @@
                 highlight-parentheses
                 highlight-indentation
                 volatile-highlights
-                ;; highlight-sexp highlight-symbol smex
+                ;; highlight-sexp
+                highlight-symbol smex
                 js2-mode
-                js2-refactor
                 js2-highlight-vars
+                s
+                dash
+                multiple-cursors
+                mark-multiple
+                js2-refactor
+
                 color-theme
                 rainbow-mode
-                mark-multiple
                 kill-ring-search
                 smart-tab
                 scss-mode

@@ -1,0 +1,5 @@
+(add-hook 'scss-mode-hook 'rainbow-mode)
+(add-hook 'scss-mode-hook 'highlight-indentation-mode)
+(add-hook 'scss-mode-hook 'highlight-parentheses-mode)
+(add-hook 'scss-mode-hook 'ac-css-mode-setup)
+(add-hook 'scss-mode-hook 'highlight-indentation-current-column-mode)
