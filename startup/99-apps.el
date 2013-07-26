@@ -23,3 +23,10 @@
 (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 (autoload 'wl-user-agent-compose "wl-draft" nil t)
 
+
+
+(defconst tramp-ssh-controlmaster-options
+  (let ((result ""))
+    result)
+    "Not use ControlMaster arguments ( sets in ~/.ssh/config ).
+Return a string to be used in `tramp-methods'.")

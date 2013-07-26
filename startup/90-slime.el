@@ -3,8 +3,8 @@
     (progn
       (require 'slime-autoloads)
 
-      (el-get-install 'slime-js)
-      (el-get-init 'slime-js)
+;;      (el-get-install 'slime-js)
+;;      (el-get-init 'slime-js)
 
       (slime-setup '(slime-repl
                      ;; slime-fuzzy

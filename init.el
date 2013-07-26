@@ -17,7 +17,7 @@
       (setq my-mach-packages '())
       (setq el-get-dir (concat (file-name-as-directory elhome-directory) "el-get/")))
   (progn
-    (setq my-mach-packages '(magit skype vkill))
+    (setq my-mach-packages '(magit vkill))
     (defconst elhome-directory "~/.emacs.d")))
 
 (add-to-list 'load-path (concat (file-name-as-directory elhome-directory) "el-get/el-get"))
@@ -85,7 +85,7 @@
                 ;; highlight-sexp
                 highlight-symbol smex
                 js2-mode
-                js2-highlight-vars
+;                js2-highlight-vars
                 s
                 dash
                 multiple-cursors
@@ -105,6 +105,8 @@
 (add-hook 'el-get-post-install-hooks 'el-get-init)
 ;; you should be connected to Net at this point
 (el-get 'sync my-packages)
+
+(autoload 'tern-mode "tern.el" nil t)
 
 (require 'elhome)
 (elhome-init)
