@@ -1,5 +1,5 @@
 ;;(toggle-debug-on-error)
-(setq windows-p (string-match "mingw" (emacs-version)))
+(setq windows-p (numberp (string-match "mingw" (emacs-version))))
 (defun log-edit-mode () nil)
 
 ;; Add mermelade
@@ -13,7 +13,17 @@
 (if windows-p
     (progn 
       (set-face-font 'default  "Liberation Mono")
-      ;; (set-face-font 'default  "Droid Sans Mono-8")
+      ;; SHELL
+      (setq explicit-shell-file-name
+            "C:/Program Files/Git/bin/sh.exe")
+      (setq shell-file-name explicit-shell-file-name)
+      (add-to-list 'exec-path "C:/Program Files/Git/bin")
+      (setq explicit-sh.exe-args '("--login" "-i"))
+      (setenv "SHELL" shell-file-name)
+      (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
+
+      (custom-set-variables
+       '(el-get-github-default-url-type 'https))
       (setq my-mach-packages '())
       (setq el-get-dir (concat (file-name-as-directory elhome-directory) "el-get/")))
   (progn
@@ -34,26 +44,15 @@
   (unless (file-exists-p emacswiki-recipes)
     (el-get-emacswiki-refresh emacswiki-recipes t)))
 
-(push (concat el-get-dir "site-lisp/recipes/") el-get-recipe-path)
+(push (concat elhome-directory "site-lisp/recipes/") el-get-recipe-path)
 
 ;; Local sources
 (setq el-get-sources
-      '((:name initsplit
-               :description "Code to split customizations into different files"
-               :type git
-               :url "git://github.com/dabrahams/initsplit.git"
-               :features initsplit)
-        ;; (:name dash
-        ;;        :type elpa
-        ;;        :description "Dash"
-        ;;        :features dash)
-        (:name ps-ccrypt
+      '((:name ps-ccrypt
                :type http
                :url "http://ccrypt.sourceforge.net/ps-ccrypt.el"
                :post-init (require 'ps-ccrypt)
                :features ps-ccrypt)
-        ;; (:name igrep
-        ;;        :type emacsmirror)
         (:name kill-ring-search
                :website "http://nschum.de/src/emacs/kill-ring-search/"
                :description "Search the kill ring incrementally and yank the result"
@@ -62,17 +61,15 @@
         (:name color-theme-less :type http :url "http://jblevins.org/git/misc.git/plain/color-theme-less.el"
                :depends color-theme
                :post-init (progn (require 'color-theme-less) (color-theme-less)))
-        ;; (:name typing
-        ;;        :features typing
-        ;;        :after (progn (require 'typing)))
         ))
 
 (setq my-packages
       (append my-mach-packages
-              '(elhome
+              '(initsplit
+                elhome
                 ergoemacs-keybindings
                 ;; geiser
-                slime
+                ;; slime
                 ;; speck csv-mode eval-sexp-fu 
                 rainbow-delimiters
                 paredit
@@ -85,28 +82,29 @@
                 ;; highlight-sexp
                 highlight-symbol smex
                 js2-mode
-;                js2-highlight-vars
+                js2-highlight-vars
                 s
                 dash
                 multiple-cursors
                 mark-multiple
+                expand-region
+                yasnippet
                 js2-refactor
-
+                js-comint
                 color-theme
                 rainbow-mode
                 kill-ring-search
                 smart-tab
                 scss-mode
                 jade-mode
-                auto-complete
-                ac-slime
-                ac-dabbrev)
+                ;; auto-complete
+                ;; ac-slime
+                ;; ac-dabbrev
+                )
               (mapcar 'el-get-source-name el-get-sources)))
 (add-hook 'el-get-post-install-hooks 'el-get-init)
 ;; you should be connected to Net at this point
 (el-get 'sync my-packages)
-
-(autoload 'tern-mode "tern.el" nil t)
 
 (require 'elhome)
 (elhome-init)
