@@ -1,4 +1,4 @@
-
+(autoload 'tern-mode "tern.el" nil t)
 ;; ;; Use lambda for anonymous functions
 ;; (font-lock-add-keywords
 ;;  'js2-mode `(("\\(function\\) *("
@@ -82,18 +82,19 @@
   (define-key js2-mode-map [(backspace)] 'c-electric-backspace)
   (define-key js2-mode-map [(control d)] 'c-electric-delete-forward)
   (define-key js2-mode-map [(control meta q)] 'mihai-bazon-indent-sexp)
-  (js2-highlight-vars-mode)
+  ;; (js2-highlight-vars-mode)
   (hl-line-mode)
   ;; (hs-minor-mode)
   (highlight-parentheses-mode)
   (highlight-symbol-mode)
   ;; (enable-paredit-mode)
+  (tern-mode t)
   (rainbow-delimiters-mode)
   (highlight-indentation-set-offset 4)
   (highlight-indentation-mode)
   (line-number-mode)
-  (hs-minor-mode)
-  (message "Mihai Bazon JS2 hook"))
+  (hs-minor-mode))
+
 (add-hook 'js2-mode-hook 'mihai-bazon-js2-mode-hook)
 
 (require 'js2-refactor)

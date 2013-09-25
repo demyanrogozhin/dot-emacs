@@ -44,7 +44,7 @@
   (unless (file-exists-p emacswiki-recipes)
     (el-get-emacswiki-refresh emacswiki-recipes t)))
 
-(push (concat elhome-directory "site-lisp/recipes/") el-get-recipe-path)
+(push (concat elhome-directory "/site-lisp/recipes/") el-get-recipe-path)
 
 ;; Local sources
 (setq el-get-sources
@@ -81,23 +81,25 @@
                 volatile-highlights
                 ;; highlight-sexp
                 highlight-symbol smex
+                yasnippet
                 js2-mode
-                js2-highlight-vars
+                skewer-mode
+                ;; js2-highlight-vars
                 s
                 dash
                 multiple-cursors
                 mark-multiple
                 expand-region
-                yasnippet
                 js2-refactor
                 js-comint
+                tern
                 color-theme
                 rainbow-mode
                 kill-ring-search
                 smart-tab
                 scss-mode
                 jade-mode
-                ;; auto-complete
+                auto-complete
                 ;; ac-slime
                 ;; ac-dabbrev
                 )

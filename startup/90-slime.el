@@ -1,14 +1,13 @@
 (if 
     (not windows-p)
     (progn
-      (require 'slime-autoloads)
+;;      (require 'slime-autoloads)
 
 ;;      (el-get-install 'slime-js)
 ;;      (el-get-init 'slime-js)
 
-      (slime-setup '(slime-repl
+;;      (slime-setup '(slime-repl ))
                      ;; slime-fuzzy
-                     ))
 
       ;; Replace "sbcl" with the path to your implementation
       (setq inferior-lisp-program "sbcl")
