@@ -24,9 +24,13 @@
 (autoload 'wl-user-agent-compose "wl-draft" nil t)
 
 
+(setq twittering-use-master-password t)
 
 (defconst tramp-ssh-controlmaster-options
   (let ((result ""))
     result)
     "Not use ControlMaster arguments ( sets in ~/.ssh/config ).
 Return a string to be used in `tramp-methods'.")
+
+(setq wakatime-cli-path "/home/dmn/bin/wakatime/wakatime-cli.py")
+(load (concat elhome-directory "/site-lisp/wakatime-mode.el"))

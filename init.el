@@ -10,9 +10,11 @@
 
 ;; ElHome
 (defconst elhome-directory "~/.emacs.d/")
+(setq el-get-dir (concat (file-name-as-directory elhome-directory) "el-get/"))
+(setq el-get-script (concat el-get-dir "el-get/el-get.el"))
 (if windows-p
     (progn 
-      (set-face-font 'default  "Liberation Mono")
+      ;; (set-face-font 'default  "Liberation Mono")
       ;; SHELL
       (setq explicit-shell-file-name
             "C:/Program Files/Git/bin/sh.exe")
@@ -24,8 +26,7 @@
 
       (custom-set-variables
        '(el-get-github-default-url-type 'https))
-      (setq my-mach-packages '())
-      (setq el-get-dir (concat (file-name-as-directory elhome-directory) "el-get/")))
+      (setq my-mach-packages '()))
   (progn
     (setq my-mach-packages '(magit vkill))
     (defconst elhome-directory "~/.emacs.d")))
@@ -100,6 +101,7 @@
                 scss-mode
                 jade-mode
                 auto-complete
+                ;; coffee-mode
                 ;; ac-slime
                 ;; ac-dabbrev
                 )

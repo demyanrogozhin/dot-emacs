@@ -42,6 +42,9 @@
  '(el-get-recipe-path
    (quote
     ("~/.emacs.d/el-get/el-get/recipes" "~/.emacs.d/el-get/el-get/recipes/emacswiki/" "~/.emacs.d/site-lisp/recipes/")) t)
+ '(grep-find-ignored-files
+   (quote
+    (".#*" "*.o" "*~" "*.bin" "*.lbin" "*.so" "*.a" "*.ln" "*.blg" "*.bbl" "*.elc" "*.lof" "*.glo" "*.idx" "*.lot" "*.fmt" "*.tfm" "*.class" "*.fas" "*.lib" "*.mem" "*.x86f" "*.sparcf" "*.dfsl" "*.pfsl" "*.d64fsl" "*.p64fsl" "*.lx64fsl" "*.lx32fsl" "*.dx64fsl" "*.dx32fsl" "*.fx64fsl" "*.fx32fsl" "*.sx64fsl" "*.sx32fsl" "*.wx64fsl" "*.wx32fsl" "*.fasl" "*.ufsl" "*.fsl" "*.dxl" "*.lo" "*.la" "*.gmo" "*.mo" "*.toc" "*.aux" "*.cp" "*.fn" "*.ky" "*.pg" "*.tp" "*.vr" "*.cps" "*.fns" "*.kys" "*.pgs" "*.tps" "*.vrs" "*.pyc" "*.pyo" "#*#")))
  '(highlight-indentation-offset 2)
  '(highlight-symbol-idle-delay 0.5)
  '(hl-paren-colors
@@ -125,6 +128,7 @@
  '(tab-width 4)
  '(tool-bar-mode nil)
  '(vc-handled-backends nil)
+ '(wakatime-api-key "5b1db84d-a4c4-452f-8af4-1aae9ceafa92")
  '(x-select-enable-clipboard t)
  '(x-select-enable-primary nil))
 (custom-set-faces
@@ -132,14 +136,23 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :foreground "gray70" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "gray70" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal))))
+ '(ediff-current-diff-B ((t (:foreground "brightgreen"))))
+ '(ediff-current-diff-C ((t (:background "color-24"))))
+ '(ediff-fine-diff-B ((t (:background "color-22"))))
+ '(ediff-odd-diff-A ((t (:foreground "White"))))
+ '(ediff-odd-diff-C ((t (:foreground "White"))))
+ '(font-lock-comment-face ((t (:foreground "brightcyan" :weight bold))))
+ '(header-line ((t (:inherit link :underline nil))))
  '(highlight-changes ((t (:background "gray5"))) t)
  '(highlight-changes-delete ((t nil)) t)
  '(highlight-indentation-current-column-face ((t (:inherit default :inverse-video t :height 0.2))))
  '(highlight-indentation-face ((t (:background "grey11" :height 0.2))))
+ '(magit-header ((t (:inherit link :underline nil :weight bold))))
  '(magit-item-highlight ((t nil)))
  '(popup-face ((t (:stipple nil :background "lightgray" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 1.0 :width normal))))
  '(popup-menu-selection-face ((t (:background "steelblue" :foreground "white" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:weight bold))))
  '(rainbow-delimiters-unmatched-face ((t (:inherit (error js2-warning-face) :foreground "#88090B"))))
- '(speedbar-tag-face ((t (:foreground "DarkSlateGray4")))))
+ '(speedbar-tag-face ((t (:foreground "DarkSlateGray4"))))
+ '(widget-field ((t (:inherit link :foreground "#999" :weight bold)))))
