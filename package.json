@@ -1,0 +1,16 @@
+{
+  "name": "dot-emacs",
+  "version": "1.0.0",
+  "description": "My new .emacs.d",
+  "scripts": {
+    "build": "npm i && emacs -Q --batch --debug-init --load './init.el' --eval '(kill-emacs)'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "editorconfig": "^0.12.2",
+    "standard": "^5.0.2",
+    "tern": "^0.13.0"
+  }
+}
