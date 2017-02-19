@@ -1,18 +1,22 @@
+;; Pre-setup for Linux
+(setenv "PATH" (concat "/run/current-system/sw/bin:" (getenv "PATH")))
+(push "/run/current-system/sw/bin" exec-path)
+(push "~/.nix-profile/bin" exec-path))
+
 (require 'cl)
 (setq debug-on-error t)
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	     '("melpa" . "https://www.mirrorservice.org/sites/melpa.org/packages/") t)
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
+	     '("org" . "http://orgmode.org/elpa/") t)
 
 (setq package-enable-at-startup nil)
 (package-initialize)
-(if (not (package-installed-p 'use-package))
-    (progn
-      (package-refresh-contents)
-      (package-install 'use-package)))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 (require 'use-package)
 

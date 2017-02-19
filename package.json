@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "editorconfig": "^0.12.2",
-    "standard": "^5.0.2",
-    "tern": "^0.13.0"
+    "editorconfig": "^0.13.2",
+    "standard": "^8.5.0",
+    "tern": "^0.20.0"
   }
 }
