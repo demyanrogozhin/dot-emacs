@@ -1,7 +1,7 @@
 ;; Pre-setup for Linux
 (setenv "PATH" (concat "/run/current-system/sw/bin:" (getenv "PATH")))
 (push "/run/current-system/sw/bin" exec-path)
-(push "~/.nix-profile/bin" exec-path))
+(push "~/.nix-profile/bin" exec-path)
 
 (require 'cl)
 (setq debug-on-error t)
@@ -14,7 +14,7 @@
 (require 'package)
 
 (add-to-list 'package-archives
-	     '("melpa" . "https://www.mirrorservice.org/sites/melpa.org/packages/") t)
+	     '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives
 	     '("org" . "http://orgmode.org/elpa/") t)
 
