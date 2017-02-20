@@ -1,6 +1,7 @@
 private*
 elpa
 node_modules
-auto-save-list
+auto-save*
 recentf
 var
+history
