@@ -5,6 +5,12 @@
 
 (require 'cl)
 (setq debug-on-error t)
+(defconst home-directory "~/.emacs.d/")
+
+(let ((private-code (concat (file-name-as-directory home-directory) "private")))
+  (if (file-exists-p  (concat private-code ".el"))
+      (load private-code)))
+
 (require 'package)
 
 (add-to-list 'package-archives
@@ -31,5 +37,5 @@
 (use-package
  elhome
  :ensure t
- :init (defconst elhome-directory "~/.emacs.d/")
+ :init (defconst elhome-directory home-directory)
  :config (elhome-init))

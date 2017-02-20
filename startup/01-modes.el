@@ -8,18 +8,18 @@
  :interpreter "node"
  :config
   (defun js-dev-hook ()
- ;(flycheck-mode)(flycheck-select-checker 'javascript-standard)
-  )
+    (flycheck-mode)
+    (setq flycheck-javascript-standard-executable
+	  (elhome-path-join elhome-directory "node_modules/.bin/standard"))
+    (setq flycheck-javascript-eslint-executable
+	  (elhome-path-join elhome-directory "node_modules/.bin/eslint"))
+    (flycheck-select-checker 'javascript-eslint))
   (add-hook 'js2-mode-hook 'js-dev-hook))
 
 (use-package
   scss-mode
   :ensure t
   :mode "\\.scss\\'")
-
-(use-package
-  ps-ccrypt
-  :ensure t)
 
 ;; Org
 (use-package org :pin org :ensure t)
